@@ -1,0 +1,18 @@
+<div class="fondo">
+<div class="text-center m-5"><h1>Pokemons primera generacion</h1></div>
+<div
+  class="container-fluid d-flex flex-wrap align-content-around justify-content-around"
+>
+  <div class="card mt-3" style="width: 18rem" *ngFor="let pokemon of pokemons">
+    <img [src]="pokemon.sprites.front_default" class="card-img-top" alt="..." />
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Numero: {{ pokemon.id }}</li>
+      <li class="list-group-item">Nombre: {{ pokemon.name }}</li>
+      <li class="list-group-item">Tipo: {{ pokemon.types[0].type.name }}</li>
+      <li class="list-group-item">
+        Movimiento: {{ pokemon.moves[0].move.name }}
+      </li>
+    </ul>
+  </div>
+</div>
+</div>

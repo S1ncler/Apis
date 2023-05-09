@@ -1,0 +1,59 @@
+<!-- div del titulo  -->
+<div
+  class="container-fluid d-flex align-content-center align-content-center p-5"
+>
+  <div
+    class="container-fluid d-flex align-content-center justify-content-center flex-wrap"
+  >
+    <h1 class="titulo">Consumo Api Rick y Morty</h1>
+  </div>
+</div>
+<!-- div del contenedor de las tarjetas -->
+<div
+  class="d-flex flex-wrap align-content-around justify-content-around bg-gray"
+>
+  <!-- div de la tarjeta -->
+  <div
+    class="container-fluid bg-gray-card p-0 mt-3"
+    style="width: 35rem"
+    *ngFor="let personaje of personajes"
+  >
+    <div class="row">
+      <div class="col-6 h-100">
+        <img [src]="personaje.image" class="img-fluid" alt="..." />
+      </div>
+      <div class="col-6">
+        <h5 class="card-title text-white">Nombre: {{ personaje.name }}</h5>
+        <div class="container-fluid">
+          <div class="row" style="height: 30px">
+            <div class="col-10">
+              <span class="rounded-circle mt-2" [class]="personaje.status">●</span>
+              <span class="card-text text-white">
+                Estatus: {{ personaje.status }}
+              </span>
+            </div>
+          </div>
+        </div>
+        <p class="card-text text-white">Especie: {{ personaje.species }}</p>
+        <p class="card-text text-white">Genero: {{ personaje.gender }}</p>
+        <p class="card-text text-white">
+          Lugar de Orgen: {{ personaje.origin.name }}
+        </p>
+        <p class="card-text text-white">
+          Ubicación actual: {{ personaje.location.name }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container-fluid d-flex align-content-center align-content-center p-5"
+  >
+    <div
+      class="container-fluid d-flex align-content-center justify-content-center"
+    >
+      <button class="btn btn-dark" (click)="cargarMas()">
+        Cargar mas personajes
+      </button>
+    </div>
+  </div>
+</div>

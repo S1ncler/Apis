@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Apis';
+  fondo_gris = "fondo-gris"
+  fondo_naranja = "fondo-naranja"
 }

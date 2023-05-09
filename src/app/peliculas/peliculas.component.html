@@ -1,0 +1,66 @@
+<div class="d-flex align-content-center justify-content-center m-4">
+    <div class="text-center mt-3 mb-3 p-4 rounded" id="titulo">
+      Consulta tu pelicula favorita en IMDB
+    </div>
+  </div>
+  <div class="container-fluid d-flex align-content-center justify-content-center p-5" id="buscador">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Escribe el nombre de una pelicula"
+        aria-label="Escribe el nombre de una pelicula"
+        aria-describedby="basic-addon2"
+        #input
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="consultar(input.value)"
+        >
+          Buscar
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="container-fluid d-flex align-content-around justify-content-around flex-wrap"
+  >
+    <div
+      class="example-2 card ms-1 mb-3"
+      style="background-image: url({{ movie.poster_path }}); width: 25rem;"
+      *ngFor="let movie of movies"
+    >
+      <div class="wrapper" style="background-color: #0000006b">
+        <div class="header">
+          <div class="date">
+            <span class="day">{{ movie.release_date }}</span>
+          </div>
+          <ul class="menu-content">
+            <li>
+              <a href="#" class="fa fa-comment-o"
+                ><span>{{ movie.vote_count }}</span></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="data">
+          <div class="content">
+            <span class="author">{{ movie.vote_average }}</span>
+            <div
+              class="stars"
+              style="--rating: {{ movie.vote_average / 2 }}"
+            ></div>
+            <h1 class="title">
+              <a href="#">{{ movie.original_title }}</a>
+            </h1>
+            <p class="text">
+              {{ movie.overview }}
+            </p>
+            <a href="#" class="button">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
